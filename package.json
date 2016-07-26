@@ -1,15 +1,16 @@
 {
-  "name": "generator-gulp",
-  "version": "1.0.0",
-  "description": "",
+  "name": "generator-ybruin",
+  "version": "0.1.0",
+  "description": "init ybruin project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "ybruin"
   ],
-  "author": "huangxiaoyan",
+  "author": "Ybruin Team",
   "license": "ISC",
   "dependencies": {
     "del": "^2.2.0",
