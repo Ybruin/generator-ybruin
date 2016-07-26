@@ -11,7 +11,7 @@
     "ybruin"
   ],
   "author": "Ybruin Team",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "del": "^2.2.0",
     "yeoman-generator": "^0.23.3"
