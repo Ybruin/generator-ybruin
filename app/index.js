@@ -22,6 +22,8 @@ module.exports = generators.Base.extend({
         }
     },
     prompting: function(){
+        var done = this.async();
+        console.log("done");
         var questions = [
             {
                 name: 'projectAssets',
@@ -49,20 +51,20 @@ module.exports = generators.Base.extend({
                 name: 'projectAuthor',
                 message: '项目开发者',
                 store: true,
-                default: 'huangxiaoyan'
+                default: 'yy'
             },{
                 type: 'input',
                 name: 'projectVersion',
                 message: '项目版本号',
-                default: '0.0.1'
+                default: '0.1.0'
             }
         ]
-        return this.prompt(questions).then(
-            function(answers){
-                for(var item in answers){
-                    answers.hasOwnProperty(item) && (this[item] = answers[item]);
-                }
-            }.bind(this));
+        this.prompt(questions, function(answers){
+            for(var item in answers){
+                answers.hasOwnProperty(item) && (this[item] = answers[item]);
+            }
+            done();
+        }.bind(this));
     },
     writing: function(){
         this.projectOutput = './dist';
@@ -71,14 +73,6 @@ module.exports = generators.Base.extend({
         this.copy('components.json', 'src/components.json');
         this.copy('ybruin-conf.js','src/ybruin-conf.js');
         this.copy('package.json', 'package.json');
-        //模板
-        // this.fs.copyTpl(
-        //     this.templatePath(this.projectAssets+'/js/index.js'),
-        //     this.destinationPath('src/js/'+this.componentName+'.js'),
-        //     {
-        //         componentName: this.componentName
-        //     }
-        // );
     },
     end: function(){
         del(['src/**/.gitignore','src/**/.npmignore','src/js/index.js']);
