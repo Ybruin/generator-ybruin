@@ -72,14 +72,8 @@ module.exports = generators.Base.extend({
         this.directory(this.projectAssets,'src');
         this.copy('components.json', 'src/components.json');
         this.copy('ybruin-conf.js','src/ybruin-conf.js');
-        this.copy('package.json', 'package.json');
     },
     end: function(){
         del(['src/**/.gitignore','src/**/.npmignore','src/js/index.js']);
-        // var dirs = glob.sync('+(node_modules)');
-        // if(!_.includes(dirs, 'node_modules')){
-        //     //创建软连接
-        //     this.spawnCommand('ln', ['-s', '/usr/local/lib/node_modules/common-packages/'+generatorName+'/node_modules', 'node_modules']);
-        // }
     }
 })

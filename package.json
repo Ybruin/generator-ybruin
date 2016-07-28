@@ -1,6 +1,6 @@
 {
   "name": "generator-ybruin",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "init ybruin project",
   "main": "index.js",
   "scripts": {
